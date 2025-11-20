@@ -5,8 +5,12 @@ public class Main {
         FrogSimulation sim = new FrogSimulation(24, 5);
         return sim.simulate();
     }
+    public static double RunSim(){
+        FrogSimulation RunSim = new FrogSimulation(24, 5);
+        return RunSim.runSimulations(400);
+    }
     public static void main(String[] args) {
-        System.out.println(sim());
+        System.out.println(RunSim());
     }
 
     }

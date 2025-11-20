@@ -22,13 +22,24 @@ public class FrogSimulation {
     for (int i=1; i<=maxHops; i++){
         int HopDist = hopDistance();
         FinalPos+= HopDist;
-        System.out.print(HopDist+" ");
         if (FinalPos>=goalDistance){
-            System.out.print("Final:"+FinalPos+" ");
             return true;
         }
     }
-    System.out.print("Final:"+FinalPos+" ");
     return false;
+    }
+    public double runSimulations(int num) {
+        if (num > 0) {
+            int TimesTrue = 0;
+            for (int i = 1; i <= num; i++) {
+                if (simulate() == true) {
+                    TimesTrue += 1;
+                }
+            }
+            return (TimesTrue / num);
+        }
+        else {
+            return 0.0;
+        }
     }
 }
